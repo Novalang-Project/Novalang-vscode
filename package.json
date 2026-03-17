@@ -1,0 +1,25 @@
+{
+  "name": "novalang",
+  "displayName": "NovaLang",
+  "publisher": "Gidor",
+  "version": "1.0.0", 
+  "engines": { "vscode": "^1.90.0" },
+  "categories": ["Programming Languages"],
+  "contributes": {
+    "languages": [
+      {
+        "id": "novalang",
+        "aliases": ["NovaLang", "novalang"],
+        "extensions": [".nova", ".nv"],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "novalang",
+        "scopeName": "source.novalang",
+        "path": "./syntaxes/novalang.tmLanguage.json"
+      }
+    ]
+  }
+}

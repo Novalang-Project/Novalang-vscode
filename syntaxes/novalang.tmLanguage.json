@@ -1,0 +1,142 @@
+{
+  "name": "NovaLang",
+  "scopeName": "source.novalang",
+  "patterns": [
+    { "include": "#comments" },
+    { "include": "#keywords" },
+    { "include": "#types" },
+    { "include": "#structs" },
+    { "include": "#functions" },
+    { "include": "#function-calls" },
+    { "include": "#numbers" },
+    { "include": "#strings" },
+    { "include": "#operators" },
+    { "include": "#brackets" },
+    { "include": "#variables" },
+    { "include": "#assigned-variables" },
+    { "include": "#rhs-variables" }
+  ],
+  "repository": {
+    "comments": {
+      "patterns": [
+        { "name": "comment.line.number-sign.novalang", "match": "#.*$" },
+        { "name": "comment.line.double-slash.novalang", "match": "//.*$" }
+      ]
+    },
+    "keywords": {
+      "patterns": [
+        {
+          "name": "keyword.control.novalang",
+          "match": "\\b(func|return|if|else|while|for|in|break|continue|import|struct)\\b"
+        }
+      ]
+    },
+    "types": {
+      "patterns": [
+        {
+          "name": "storage.type.novalang",
+          "match": "\\b(int|float|string|bool|list|auto|none|true|false|const)\\b"
+        }
+      ]
+    },
+    "structs": {
+      "patterns": [
+        {
+          "match": "\\bstruct\\s+(\\w+)",
+          "captures": {
+            "1": { "name": "entity.name.type.novalang" }
+          }
+        },
+        {
+          "match": "\\{[^}]*?\\s+(\\w+)\\s*=",
+          "captures": {
+            "1": { "name": "variable.other.member.novalang" }
+          }
+        },
+        {
+          "match": "\\.(\\w+)",
+          "captures": {
+            "1": { "name": "variable.other.member.novalang" }
+          }
+        },
+        {
+          "match": "\\b(\\w+)\\s*(?=\\()",
+          "captures": {
+            "1": { "name": "support.function.constructor.novalang" }
+          }
+        }
+      ]
+    },
+    "numbers": {
+      "patterns": [
+        { "name": "constant.numeric.integer.novalang", "match": "\\b\\d+\\b" },
+        { "name": "constant.numeric.float.novalang", "match": "\\b\\d+\\.\\d+\\b" }
+      ]
+    },
+    "strings": {
+      "patterns": [
+        { "name": "string.quoted.double.novalang", "match": "\".*?\"" }
+      ]
+    },
+    "operators": {
+      "patterns": [
+        { "name": "keyword.operator.novalang", "match": "\\+|\\-|\\*|\\/|\\^|=|\\+=|\\-=|\\*=|\\/=" },
+        { "name": "keyword.operator.unary.novalang", "match": "\\+\\+|\\-\\-" },
+        { "name": "keyword.operator.arrow.novalang", "match": "->" },
+        { "name": "keyword.operator.comparison.novalang", "match": "==|!=|<=|>=|<|>" }
+      ]
+    },
+    "variables": {
+      "patterns": [
+        {
+          "name": "variable.other.novalang",
+          "match": "(?<=\\b(auto|int|float|string|bool|list)\\s+)\\w+"
+        },
+        {
+          "name": "variable.parameter.novalang",
+          "match": "(?<=\\bfunc\\s+\\w+\\s*\\()\\s*\\w+"
+        }
+      ]
+    },
+    "functions": {
+      "patterns": [
+        {
+          "match": "\\bfunc\\s+(\\w+)",
+          "captures": {
+            "1": { "name": "entity.name.function.novalang" } 
+          }
+        }
+      ]
+    },
+    "function-calls": {
+      "patterns": [
+        {
+          "match": "\\b(\\w+)\\s*(?=\\()",
+          "name": "support.function.novalang"
+        }
+      ]
+    },
+    "assigned-variables": {
+      "patterns": [
+        {
+          "match": "\\b(\\w+)\\s*(?==)", 
+          "name": "variable.other.novalang"
+        }
+      ]
+    },
+    "rhs-variables": {
+      "patterns": [
+        {
+          "match": "\\b(?!int|float|string|bool|list|auto|func|return|if|else|while|for|in|break|continue|import|none|true|false)\\w+\\b",
+          "name": "variable.other.novalang"
+        }
+      ]
+    },
+    
+    "brackets": {
+      "patterns": [
+        { "name": "punctuation.bracket.novalang", "match": "[\\{\\}\\(\\)\\[\\]]" }
+      ]
+    }
+  }
+}
