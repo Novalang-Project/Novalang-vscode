@@ -27,7 +27,7 @@
       "patterns": [
         {
           "name": "keyword.control.novalang",
-          "match": "\\b(func|return|if|else|while|for|in|break|continue|import|struct)\\b"
+          "match": "\\b(return|if|elif|else|while|for|in|break|continue|import|struct)\\b"
         }
       ]
     },
@@ -35,7 +35,7 @@
       "patterns": [
         {
           "name": "storage.type.novalang",
-          "match": "\\b(int|float|string|bool|list|auto|none|true|false|const)\\b"
+          "match": "\\b(func|int|float|string|bool|list|auto|none|true|false|const)\\b"
         }
       ]
     },

@@ -19,21 +19,17 @@ func main() {
 
         if (choice == "1") {
             println("Hello, NovaLang user!")
+        } elif (choice == "2") {
+            println("Enter first number:")
+            auto x = input()
+            println("Enter second number:")
+            auto y = input()
+            println("Sum is: " + addNumbers(x, y)) # right now minor bug, as every input is string, so 5 + 7 will be 57. will need conversion methods.
+        } else if (choice == "3") {
+            println("Exiting…")
+            return
         } else {
-            if (choice == "2") {
-                println("Enter first number:")
-                auto x = input()
-                println("Enter second number:")
-                auto y = input()
-                println("Sum is: " + addNumbers(x, y)) # right now minor bug, as every input is string, so 5 + 7 will be 57. will need conversion methods.
-            } else {
-                if (choice == "3") {
-                    println("Exiting…")
-                    return
-                } else {
-                    println("Invalid choice")
-                }
-            }
+            println("Invalid choice")
         }
     }
 }
