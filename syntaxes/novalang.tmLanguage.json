@@ -27,7 +27,7 @@
       "patterns": [
         {
           "name": "keyword.control.novalang",
-          "match": "\\b(return|if|elif|else|while|for|in|break|continue|import|struct)\\b"
+          "match": "\\b(return|if|elif|else|while|for|in|break|continue|import|as|from|struct)\\b"
         }
       ]
     },
